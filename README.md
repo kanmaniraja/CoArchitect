@@ -14,12 +14,12 @@ The system decomposes concerns into a clear, decoupled architecture. High-level 
 graph TD
     User["👤 Developer"] -- Runs CLI command --> CLI["💻 co_architect_cli.py"]
     
-    subgraph Co-Architect Agent (ADK 2.0)
+    subgraph "Co-Architect Agent (ADK 2.0)"
         CLI -- Initializes --> Agent["🤖 Antigravity Agent"]
         Agent -- Loads rules from --> Skill["📄 co-architect-skill (SKILL.md)"]
     end
     
-    subgraph MCP Server Layer
+    subgraph "MCP Server Layer"
         Agent -- Launches & queries over stdio --> MCP["🏗️ architecture-principles-mcp"]
         MCP -- Resolves resource request --> Guides["📖 references/*.md (SOLID Guides)"]
         MCP -- Calls validation tool --> AST["⚡ validator.py (AST Static Analysis)"]
